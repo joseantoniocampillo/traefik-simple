@@ -16,6 +16,12 @@ services:
         - "traefik.enable=true"
         - "traefik.http.routers.portainer.entrypoints=http"
         - "traefik.http.routers.portainer.rule=Host(`${DOMAIN}`)"
+
+#- "traefik.frontend.rule=Host:${DOMAIN},www.${DOMAIN}"
+#- "traefik.frontend.redirect.regex=^https?://www.${DOMAIN}/(.*)"
+#- "traefik.frontend.redirect.replacement=https://${DOMAIN}/$${1}"
+#- "traefik.frontend.redirect.permanent=true"
+
         - "traefik.http.middlewares.portainer-https-redirect.redirectscheme.scheme=https"
         - "traefik.http.routers.portainer.middlewares=portainer-https-redirect"
         - "traefik.http.routers.portainer-secure.entrypoints=https"
