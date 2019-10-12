@@ -18,7 +18,7 @@ providers:
 certificatesResolvers:
   http:
     acme:
-      email: email@example.com
+      email: campi2222@hotmail.es
       storage: acme.json
       httpChallenge:
         entryPoint: http
