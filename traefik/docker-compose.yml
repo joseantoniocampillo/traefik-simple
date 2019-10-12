@@ -22,7 +22,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.entrypoints=http"
       - "traefik.http.routers.traefik.rule=Host(`${DOMAIN}`)"
-      - "traefik.http.middlewares.traefik-auth.basicauth.users=${PASS}"
+      - "traefik.http.middlewares.traefik-auth.basicauth.users=admin:$$apr1$$uofW0VFm$$ISbUQQlLGuJI/GmokLk0f."
       - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
       - "traefik.http.routers.traefik-secure.entrypoints=https"
