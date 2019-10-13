@@ -1,5 +1,5 @@
 # specific:
-# DOMAIN, SERVICE
+# DOMAIN, SERVICE, PORT
 version: '3'
 services:
     nginx: # debe de ser el nombre del $SERVICE
@@ -23,7 +23,7 @@ services:
         - "traefik.http.routers.${SERVICE}-secure.tls=true"
         - "traefik.http.routers.${SERVICE}-secure.tls.certresolver=http"
         - "traefik.http.routers.${SERVICE}-secure.service=${SERVICE}"
-        - "traefik.http.services.${SERVICE}.loadbalancer.server.port=80"
+        - "traefik.http.services.${SERVICE}.loadbalancer.server.port=${PORT}"
         - "traefik.docker.network=proxy"
 networks:
   proxy:
